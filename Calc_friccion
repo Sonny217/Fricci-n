@@ -1,0 +1,39 @@
+def cargar_datos():
+    var1= int(input("Cuanto pesa aproximadamente el objeto:"))
+    print("Opciones de superficies validas: Hielo, Acero, Alfonbra,Asfalto")
+    var2=str(input("por cual superficie sera arrastrado:"))
+    return (var1, var2)
+
+def fuerza_normal(var1):
+    fn= int(var1*9.8)
+    return fn
+
+
+def superficie(fn, var2):
+    hielo= float(0.1)
+    acero= float(0.6)
+    madera = float(0.5)
+    alfombra=float(0.7)
+    asfalto=float(0.9)
+
+    if var2.lower() == hielo:
+        ice= hielo*fn
+        print(f"La fuerza mínima necesaria para mover el objeto en el hielo es de:{ice} N")
+    elif var2.lower() == acero:
+        iron = acero*fn
+        print(f"La fuerza mínima necesaria para mover el objeto en el acero es de:{iron} N")
+    elif var2.lower() == madera:
+        wood = madera*fn
+        print(f"La fuerza mínima necesaria para mover el objeto en el madera es de:{wood} N")
+    elif var2.lower() == alfombra:
+        carpet= alfombra*fn
+        print(f"La fuerza mínima necesaria para mover el objeto en el alfombra es de:{carpet} N")
+    else:
+        var2.lower() == asfalto
+        asphalt=asfalto*fn
+        print(f"La fuerza mínima necesaria para mover el objeto en el asfalto es de:{asphalt} N")
+
+
+valores=cargar_datos()
+fuerza_normal_calculada  = fuerza_normal(valores[0])
+superficie(fuerza_normal_calculada ,valores[1])
